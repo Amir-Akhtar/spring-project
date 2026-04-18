@@ -9,6 +9,6 @@ public class HealthCheckController {
     //endpoint for health check
     @GetMapping("/health")
     public String checkHealth(){
-        return  "App is up and running healthy!";
+        return  "App is up and running healthy! Amir DevOps Engineer has set this app correctly";
     }
 }

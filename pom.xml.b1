@@ -5,44 +5,41 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Spring Boot 3 (required for Java 21) -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version>
+        <version>2.6.2</version>
         <relativePath/>
     </parent>
 
     <groupId>com.cloudtechmasters</groupId>
     <artifactId>realtime-project-demo</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.1-SNAPSHOT</version>
+
     <name>realtime-project-demo</name>
-    <description>Demo project for Spring Boot 3 + Java 21</description>
+    <description>Demo project for Spring Boot</description>
 
     <properties>
-        <!-- Java 21 -->
+        <!-- IMPORTANT: align with your VM (Java 21) -->
         <java.version>21</java.version>
 
-        <!-- SonarQube compatibility -->
+        <!-- Optional but recommended for Sonar reports -->
         <sonar.java.source>21</sonar.java.source>
         <sonar.java.target>21</sonar.java.target>
     </properties>
 
     <dependencies>
 
-        <!-- Core Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -50,23 +47,6 @@
         </dependency>
 
     </dependencies>
-
-    <!-- ✅ ADDED: Nexus Repository Deployment -->
-    <distributionManagement>
-
-        <repository>
-            <id>nexus-releases</id>
-            <name>Nexus Releases</name>
-            <url>http://192.168.57.14:8081/repository/maven-releases/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshots</name>
-            <url>http://192.168.57.14:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
-
-    </distributionManagement>
 
     <build>
         <plugins>

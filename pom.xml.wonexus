@@ -15,7 +15,7 @@
 
     <groupId>com.cloudtechmasters</groupId>
     <artifactId>realtime-project-demo</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>realtime-project-demo</name>
     <description>Demo project for Spring Boot 3 + Java 21</description>
 
@@ -50,23 +50,6 @@
         </dependency>
 
     </dependencies>
-
-    <!-- ✅ ADDED: Nexus Repository Deployment -->
-    <distributionManagement>
-
-        <repository>
-            <id>nexus-releases</id>
-            <name>Nexus Releases</name>
-            <url>http://192.168.57.14:8081/repository/maven-releases/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshots</name>
-            <url>http://192.168.57.14:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
-
-    </distributionManagement>
 
     <build>
         <plugins>
