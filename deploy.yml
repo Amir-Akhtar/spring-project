@@ -1,6 +1,6 @@
 ---
 - name: Deploy Docker container
-  hosts: dev-server
+  hosts: dev
   become: yes
 
   vars:
