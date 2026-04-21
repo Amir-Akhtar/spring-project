@@ -1,0 +1,28 @@
+---
+- name: Deploy Docker container
+  hosts: dev-server
+  become: yes
+
+  vars:
+    image_name: "amir46/my-app"
+    tag: "{{ tag }}"
+    container_name: "my-app"
+
+  tasks:
+
+    - name: Login to Docker Hub
+      shell: echo "{{ docker_pass }}" | docker login -u "{{ docker_user }}" --password-stdin
+
+    - name: Pull latest image
+      shell: docker pull {{ image_name }}:{{ tag }}
+
+    - name: Stop existing container
+      shell: docker stop {{ container_name }}
+      ignore_errors: yes
+
+    - name: Remove existing container
+      shell: docker rm {{ container_name }}
+      ignore_errors: yes
+
+    - name: Run new container
+      shell: docker run -d -p 80:8888 --name {{ container_name }} {{ image_name }}:{{ tag }}
